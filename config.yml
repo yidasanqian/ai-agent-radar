@@ -1,0 +1,49 @@
+# ai-agent-radar configuration
+# Edit this file to customize which repositories are tracked.
+# Changes take effect on the next workflow run.
+
+# ── AI CLI tools ──────────────────────────────────────────────────────────────
+# Tracked for per-tool digests and cross-tool comparison.
+# Each entry requires: id (filename slug), repo (owner/repo), name (display name).
+# Set paginated: true for high-volume repos with many daily updates.
+
+cli_repos:
+  - id: claude-code
+    repo: anthropics/claude-code
+    name: Claude Code
+  - id: codex
+    repo: openai/codex
+    name: OpenAI Codex
+  - id: gemini-cli
+    repo: google-gemini/gemini-cli
+    name: Gemini CLI
+
+# ── Claude Code Skills ────────────────────────────────────────────────────────
+# Tracked separately without a date filter, sorted by community engagement.
+
+skills_repo: anthropics/skills
+
+# ── OpenClaw (primary focus project) ─────────────────────────────────────────
+# Tracked with a dedicated deep-dive report. Set paginated: true for high-volume repos.
+
+openclaw:
+  id: openclaw
+  repo: openclaw/openclaw
+  name: OpenClaw
+  paginated: true
+
+# ── Agent ecosystem comparison ────────────────────────────────────────────────
+# Keep this list focused. By default Hermes Agent, cc-haha, and Codex++ are compared with OpenClaw.
+
+openclaw_peers:
+  - id: hermes-agent
+    repo: NousResearch/hermes-agent
+    name: Hermes Agent
+    paginated: true
+  - id: cc-haha
+    repo: NanmiCoder/cc-haha
+    name: cc-haha
+  - id: codex-plus-plus
+    repo: BigPizzaV3/CodexPlusPlus
+    name: Codex++
+    paginated: true
