@@ -8,6 +8,7 @@ import path from "node:path";
 
 const DEFAULT_OPENAI_BASE_URL = "https://api.openai.com/v1";
 const DEFAULT_MODEL = "gpt-4.1-mini";
+const DEFAULT_LLM_CONCURRENCY = 3;
 
 // ---------------------------------------------------------------------------
 // Concurrency limiter — prevents rate-limit (429) errors when many LLM calls
@@ -15,7 +16,18 @@ const DEFAULT_MODEL = "gpt-4.1-mini";
 // any given time; the rest queue and run as slots free up.
 // ---------------------------------------------------------------------------
 
-const LLM_CONCURRENCY = 5;
+function getPositiveIntEnv(name: string, fallback: number): number {
+  const raw = process.env[name];
+  if (!raw) return fallback;
+
+  const parsed = Number.parseInt(raw, 10);
+  if (Number.isFinite(parsed) && parsed > 0) return parsed;
+
+  console.warn(`[config] Invalid ${name}="${raw}", using ${fallback}`);
+  return fallback;
+}
+
+const LLM_CONCURRENCY = getPositiveIntEnv("LLM_CONCURRENCY", DEFAULT_LLM_CONCURRENCY);
 let llmSlots = LLM_CONCURRENCY;
 const llmQueue: Array<() => void> = [];
 
@@ -40,8 +52,8 @@ function releaseSlot(): void {
 // LLM
 // ---------------------------------------------------------------------------
 
-const MAX_RETRIES = 3;
-const RETRY_BASE_MS = 5_000; // 5 s, 10 s, 20 s
+const MAX_RETRIES = 10;
+const RETRY_BASE_MS = 5_000; // exponential backoff: 5 s, 10 s, 20 s, ...
 
 function is429(err: unknown): boolean {
   return (err as { status?: number })?.status === 429 || String(err).includes("429");

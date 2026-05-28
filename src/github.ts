@@ -3,6 +3,8 @@
  * Reads GITHUB_TOKEN from environment at call time.
  */
 
+import { createHttpError, isRetryableHttpError, withRetry } from "./retry.ts";
+
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
@@ -61,6 +63,8 @@ export interface GitHubRelease {
 
 /** Maximum pages to fetch for paginated repos (100 items/page). */
 const MAX_PAGES = 5;
+const GITHUB_FETCH_RETRIES = 3;
+const GITHUB_RETRY_BASE_MS = 2_000;
 
 function headers(): Record<string, string> {
   return {
@@ -73,9 +77,22 @@ function headers(): Record<string, string> {
 async function githubGet<T>(url: string, params: Record<string, string> = {}): Promise<T> {
   const u = new URL(url);
   for (const [k, v] of Object.entries(params)) u.searchParams.set(k, v);
-  const resp = await fetch(u.toString(), { headers: headers() });
-  if (!resp.ok) throw new Error(`GitHub API error ${resp.status} (${url}): ${await resp.text()}`);
-  return resp.json() as Promise<T>;
+
+  return withRetry(
+    async () => {
+      const resp = await fetch(u.toString(), { headers: headers() });
+      if (!resp.ok) {
+        throw createHttpError(`GitHub API error ${resp.status} (${url}): ${await resp.text()}`, resp.status);
+      }
+      return resp.json() as Promise<T>;
+    },
+    {
+      label: "github",
+      retries: GITHUB_FETCH_RETRIES,
+      baseDelayMs: GITHUB_RETRY_BASE_MS,
+      shouldRetry: isRetryableHttpError,
+    },
+  );
 }
 
 async function fetchItemPage(

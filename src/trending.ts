@@ -2,6 +2,8 @@
  * GitHub trending and AI topic search data fetching.
  */
 
+import { createHttpError, isRetryableHttpError, withRetry } from "./retry.ts";
+
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
@@ -36,6 +38,9 @@ export interface TrendingData {
 // Constants
 // ---------------------------------------------------------------------------
 
+const GITHUB_FETCH_RETRIES = 3;
+const GITHUB_RETRY_BASE_MS = 2_000;
+
 const SEARCH_QUERIES = [
   { q: "topic:llm", label: "llm" },
   { q: "topic:ai-agent", label: "ai-agent" },
@@ -49,20 +54,48 @@ const SEARCH_QUERIES = [
 // GitHub Trending HTML fetch
 // ---------------------------------------------------------------------------
 
+async function fetchGitHubText(url: string, headers: Record<string, string>, label: string): Promise<string> {
+  return withRetry(
+    async () => {
+      const resp = await fetch(url, { headers });
+      if (!resp.ok) throw createHttpError(`HTTP ${resp.status} (${url})`, resp.status);
+      return await resp.text();
+    },
+    {
+      label,
+      retries: GITHUB_FETCH_RETRIES,
+      baseDelayMs: GITHUB_RETRY_BASE_MS,
+      shouldRetry: isRetryableHttpError,
+    },
+  );
+}
+
+async function fetchGitHubJson<T>(url: string, headers: Record<string, string>, label: string): Promise<T> {
+  return withRetry(
+    async () => {
+      const resp = await fetch(url, { headers });
+      if (!resp.ok) throw createHttpError(`HTTP ${resp.status} (${url})`, resp.status);
+      return resp.json() as Promise<T>;
+    },
+    {
+      label,
+      retries: GITHUB_FETCH_RETRIES,
+      baseDelayMs: GITHUB_RETRY_BASE_MS,
+      shouldRetry: isRetryableHttpError,
+    },
+  );
+}
+
 async function fetchGitHubTrending(): Promise<{ repos: TrendingRepo[]; success: boolean }> {
   try {
-    const resp = await fetch("https://github.com/trending?since=daily&spoken_language_code=", {
-      headers: {
+    const html = await fetchGitHubText(
+      "https://github.com/trending?since=daily&spoken_language_code=",
+      {
         "User-Agent": "Mozilla/5.0 (compatible; ai-agent-radar/1.0)",
         Accept: "text/html",
       },
-    });
-    if (!resp.ok) {
-      console.error(`  [trending] HTTP ${resp.status} fetching github.com/trending`);
-      return { repos: [], success: false };
-    }
-
-    const html = await resp.text();
+      "trending",
+    );
     const repos: TrendingRepo[] = [];
 
     // Split by article blocks
@@ -157,12 +190,7 @@ async function searchAiRepos(sevenDaysAgo: string): Promise<SearchRepo[]> {
       try {
         const query = `${q}+pushed:>${sevenDaysAgo}&sort=stars&order=desc`;
         const url = `https://api.github.com/search/repositories?q=${query}&per_page=15`;
-        const resp = await fetch(url, { headers });
-        if (!resp.ok) {
-          console.error(`  [trending/search] "${label}": HTTP ${resp.status}`);
-          return;
-        }
-        const data = (await resp.json()) as SearchApiResponse;
+        const data = await fetchGitHubJson<SearchApiResponse>(url, headers, `trending/search:${label}`);
         let added = 0;
         for (const item of data.items ?? []) {
           if (!seen.has(item.full_name)) {

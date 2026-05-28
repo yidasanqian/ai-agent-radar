@@ -13,6 +13,8 @@
 import fs from "node:fs";
 import path from "node:path";
 
+import { createHttpError, isRetryableHttpError, withRetry } from "./retry.ts";
+
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
@@ -101,6 +103,8 @@ const MAX_CONTENT_LENGTH = 1_500;
 const FETCH_DELAY_MS = 300;
 /** Per-request timeout (ms). */
 const FETCH_TIMEOUT_MS = 10_000;
+const WEB_FETCH_RETRIES = 3;
+const WEB_RETRY_BASE_MS = 2_000;
 
 // ---------------------------------------------------------------------------
 // HTTP helpers
@@ -113,15 +117,25 @@ const WEB_HEADERS = {
 };
 
 async function httpGet(url: string): Promise<string> {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
-  try {
-    const resp = await fetch(url, { headers: WEB_HEADERS, signal: controller.signal });
-    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-    return await resp.text();
-  } finally {
-    clearTimeout(timer);
-  }
+  return withRetry(
+    async () => {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+      try {
+        const resp = await fetch(url, { headers: WEB_HEADERS, signal: controller.signal });
+        if (!resp.ok) throw createHttpError(`HTTP ${resp.status} (${url})`, resp.status);
+        return await resp.text();
+      } finally {
+        clearTimeout(timer);
+      }
+    },
+    {
+      label: "web",
+      retries: WEB_FETCH_RETRIES,
+      baseDelayMs: WEB_RETRY_BASE_MS,
+      shouldRetry: isRetryableHttpError,
+    },
+  );
 }
 
 function sleep(ms: number): Promise<void> {

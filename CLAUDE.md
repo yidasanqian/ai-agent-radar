@@ -27,6 +27,7 @@ export OPENAI_API_KEY=sk-xxxxx
 export OPENAI_BASE_URL=https://api.openai.com/v1
 export OPENAI_MODEL=gpt-4.1-mini
 export REPORT_LANGS=zh
+export LLM_CONCURRENCY=3
 ```
 
 ## Architecture

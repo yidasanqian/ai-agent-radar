@@ -84,6 +84,7 @@ openclaw_peers:
 | 名称 | 用途 |
 |---|---|
 | `REPORT_LANGS` | 报告语言，例如 `zh` 或 `zh,en`，默认 `zh` |
+| `LLM_CONCURRENCY` | LLM 最大并发请求数，默认 `3`，40 RPM 配额建议从 `3` 起步 |
 | `PAGES_URL` | GitHub Pages 站点地址，用于 RSS 和 Telegram 链接 |
 
 ## 本地运行
@@ -96,6 +97,7 @@ export OPENAI_BASE_URL=https://api.openai.com/v1
 export OPENAI_API_KEY=sk-xxxxxxxx
 export OPENAI_MODEL=gpt-4.1-mini
 export REPORT_LANGS=zh
+export LLM_CONCURRENCY=3
 
 pnpm start
 pnpm manifest
