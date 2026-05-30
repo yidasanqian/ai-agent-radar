@@ -49,6 +49,13 @@ pnpm manifest
 
 Reports are written as local files only. The project does not create GitHub Issues.
 
+`OPENAI_BASE_URL` must be a base URL such as `https://api.openai.com/v1` or
+`https://api.anthropic.com/v1`, not a full `/chat/completions` or `/messages`
+endpoint. The runtime automatically detects Anthropic's native API and calls
+`/v1/messages`. Legacy `ANTHROPIC_API_KEY`, `ANTHROPIC_BASE_URL`, and
+`ANTHROPIC_MODEL` variables are still supported. `LLM_PROVIDER` can optionally
+force `openai` or `anthropic`, but is usually not needed.
+
 ## Development
 
 ```bash

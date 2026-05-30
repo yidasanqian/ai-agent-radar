@@ -1,14 +1,17 @@
 /**
  * LLM invocation and file output helpers.
- * Supports OpenAI-compatible chat/completions endpoints.
+ * Supports OpenAI-compatible chat/completions endpoints and Anthropic Messages API.
  */
 
 import fs from "node:fs";
 import path from "node:path";
 
 const DEFAULT_OPENAI_BASE_URL = "https://api.openai.com/v1";
+const DEFAULT_ANTHROPIC_BASE_URL = "https://api.anthropic.com/v1";
 const DEFAULT_MODEL = "gpt-4.1-mini";
 const DEFAULT_LLM_CONCURRENCY = 3;
+const DEFAULT_ANTHROPIC_MODEL = "claude-3-5-haiku-latest";
+const ANTHROPIC_VERSION = "2023-06-01";
 
 // ---------------------------------------------------------------------------
 // Concurrency limiter — prevents rate-limit (429) errors when many LLM calls
@@ -63,20 +66,77 @@ function sleep(ms: number): Promise<void> {
   return new Promise((r) => setTimeout(r, ms));
 }
 
-function getLlmApiKey(): string {
-  return process.env["OPENAI_API_KEY"] ?? process.env["ANTHROPIC_API_KEY"] ?? "";
+type LlmProvider = "openai" | "anthropic";
+
+function readEnv(...names: string[]): string | undefined {
+  for (const name of names) {
+    const value = process.env[name]?.trim();
+    if (value) return value;
+  }
+  return undefined;
 }
 
-export function getLlmBaseUrl(): string {
-  return (
-    process.env["OPENAI_BASE_URL"] ??
-    process.env["ANTHROPIC_BASE_URL"] ??
-    DEFAULT_OPENAI_BASE_URL
-  ).replace(/\/$/, "");
+function getLlmApiKey(): string {
+  return readEnv("OPENAI_API_KEY", "ANTHROPIC_API_KEY") ?? "";
+}
+
+function getConfiguredBaseUrl(): string | undefined {
+  return readEnv("OPENAI_BASE_URL", "ANTHROPIC_BASE_URL");
+}
+
+function normalizeBaseUrl(provider: LlmProvider, baseUrl: string): string {
+  const normalized = baseUrl.replace(/\/$/, "");
+  if (/\/(?:chat\/completions|messages)$/i.test(normalized)) {
+    throw new Error(
+      "LLM base URL must be a base path such as https://api.openai.com/v1 or https://api.anthropic.com/v1, not a full completion endpoint",
+    );
+  }
+  if (provider === "openai" && /^https:\/\/api\.openai\.com$/i.test(normalized)) {
+    return `${normalized}/v1`;
+  }
+  if (provider === "anthropic" && /^https:\/\/api\.anthropic\.com$/i.test(normalized)) {
+    return `${normalized}/v1`;
+  }
+  return normalized;
 }
 
 function getLlmModel(): string {
-  return process.env["OPENAI_MODEL"] ?? process.env["ANTHROPIC_MODEL"] ?? DEFAULT_MODEL;
+  const configured = readEnv("OPENAI_MODEL", "ANTHROPIC_MODEL");
+  if (configured) return configured;
+  return getLlmProvider() === "anthropic" ? DEFAULT_ANTHROPIC_MODEL : DEFAULT_MODEL;
+}
+
+function getLlmProvider(): LlmProvider {
+  const configuredProvider = readEnv("LLM_PROVIDER")?.toLowerCase();
+  if (configuredProvider === "anthropic" || configuredProvider === "openai") {
+    return configuredProvider;
+  }
+
+  const configuredBaseUrl = getConfiguredBaseUrl();
+  if (configuredBaseUrl && /(^|\.)anthropic\.com(\/|$)/i.test(configuredBaseUrl)) {
+    return "anthropic";
+  }
+
+  const hasOpenAiKey = Boolean(readEnv("OPENAI_API_KEY"));
+  const hasAnthropicKey = Boolean(readEnv("ANTHROPIC_API_KEY"));
+  if (!hasOpenAiKey && hasAnthropicKey) return "anthropic";
+
+  const model = readEnv("OPENAI_MODEL", "ANTHROPIC_MODEL");
+  if (!configuredBaseUrl && model?.toLowerCase().startsWith("claude-")) {
+    return "anthropic";
+  }
+
+  return "openai";
+}
+
+export function getLlmBaseUrl(): string {
+  const provider = getLlmProvider();
+  const fallback = provider === "anthropic" ? DEFAULT_ANTHROPIC_BASE_URL : DEFAULT_OPENAI_BASE_URL;
+  return normalizeBaseUrl(provider, getConfiguredBaseUrl() ?? fallback);
+}
+
+export function getLlmConfigSummary(): string {
+  return `provider: ${getLlmProvider()} | endpoint: ${getLlmBaseUrl()} | model: ${getLlmModel()}`;
 }
 
 export function hasLlmCredentials(): boolean {
@@ -116,31 +176,51 @@ export async function callLlm(prompt: string, maxTokens = 4096): Promise<string>
       const apiKey = getLlmApiKey();
       if (!apiKey) throw new Error("Missing required environment variable: OPENAI_API_KEY");
 
-      const resp = await fetch(`${getLlmBaseUrl()}/chat/completions`, {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          model: getLlmModel(),
-          messages: [{ role: "user", content: prompt }],
-          temperature: 0.2,
-          max_tokens: maxTokens,
-        }),
-      });
+      const provider = getLlmProvider();
+      const baseUrl = getLlmBaseUrl();
+      const url = provider === "anthropic" ? `${baseUrl}/messages` : `${baseUrl}/chat/completions`;
+      const resp =
+        provider === "anthropic"
+          ? await fetch(url, {
+              method: "POST",
+              headers: {
+                "x-api-key": apiKey,
+                "anthropic-version": ANTHROPIC_VERSION,
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                model: getLlmModel(),
+                messages: [{ role: "user", content: prompt }],
+                temperature: 0.2,
+                max_tokens: maxTokens,
+              }),
+            })
+          : await fetch(url, {
+              method: "POST",
+              headers: {
+                Authorization: `Bearer ${apiKey}`,
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                model: getLlmModel(),
+                messages: [{ role: "user", content: prompt }],
+                temperature: 0.2,
+                max_tokens: maxTokens,
+              }),
+            });
       if (!resp.ok) {
-        throw new Error(`LLM API ${resp.status}: ${await resp.text()}`);
+        throw new Error(`LLM API ${provider} ${resp.status} at ${url}: ${await resp.text()}`);
       }
 
       const data = (await resp.json()) as {
+        content?: unknown;
         choices?: Array<{
           message?: {
             content?: unknown;
           };
         }>;
       };
-      const content = data.choices?.[0]?.message?.content;
+      const content = provider === "anthropic" ? data.content : data.choices?.[0]?.message?.content;
       return extractTextContent(content);
     } catch (err) {
       if (attempt < MAX_RETRIES && is429(err)) {

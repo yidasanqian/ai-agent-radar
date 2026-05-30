@@ -71,13 +71,18 @@ openclaw_peers:
 
 | 名称 | 必需 | 用途 |
 |---|---:|---|
-| `OPENAI_API_KEY` | 是 | OpenAI 兼容接口 key |
-| `OPENAI_BASE_URL` | 否 | OpenAI 兼容接口地址 |
+| `OPENAI_API_KEY` | 是 | OpenAI 兼容接口 key，或 Anthropic API key |
+| `OPENAI_BASE_URL` | 否 | OpenAI 兼容接口地址，或 Anthropic 原生地址 |
 | `OPENAI_MODEL` | 否 | 模型名，默认 `gpt-4.1-mini` |
 | `TELEGRAM_BOT_TOKEN` | 否 | Telegram 通知 |
 | `TELEGRAM_CHAT_ID` | 否 | Telegram 通知目标 |
 
 `GITHUB_TOKEN` 由 GitHub Actions 自动提供，只用于读取 GitHub API 和提交生成文件。
+
+LLM 地址必须填写 base URL，例如 `https://api.openai.com/v1` 或
+`https://api.anthropic.com/v1`，不要填写完整的 `/chat/completions` 或
+`/messages` endpoint。项目会自动识别 Anthropic 原生 API 并使用 `/v1/messages`。
+兼容旧配置的 `ANTHROPIC_API_KEY`、`ANTHROPIC_BASE_URL`、`ANTHROPIC_MODEL` 仍可使用。
 
 可选变量：
 
@@ -86,6 +91,7 @@ openclaw_peers:
 | `REPORT_LANGS` | 报告语言，例如 `zh` 或 `zh,en`，默认 `zh` |
 | `LLM_CONCURRENCY` | LLM 最大并发请求数，默认 `3`，40 RPM 配额建议从 `3` 起步 |
 | `PAGES_URL` | GitHub Pages 站点地址，用于 RSS 和 Telegram 链接 |
+| `LLM_PROVIDER` | 可选强制指定 `openai` 或 `anthropic`；通常不需要，运行时会自动识别 |
 
 ## 本地运行
 

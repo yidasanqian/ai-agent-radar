@@ -45,7 +45,9 @@ export async function withRetry<T>(operation: () => Promise<T>, options: RetryOp
       if (attempt >= options.retries || !options.shouldRetry(err)) throw err;
 
       const wait = options.baseDelayMs * 2 ** attempt;
-      console.error(`  [${options.label}] retry ${attempt + 1}/${options.retries} in ${wait / 1000}s: ${err}`);
+      console.error(
+        `  [${options.label}] retry ${attempt + 1}/${options.retries} in ${wait / 1000}s: ${err}`,
+      );
       await sleep(wait);
     }
   }

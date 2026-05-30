@@ -30,7 +30,7 @@ import {
   buildTrendingPrompt,
   buildHnPrompt,
 } from "./prompts.ts";
-import { callLlm, saveFile, autoGenFooter, getLlmBaseUrl, hasLlmCredentials } from "./report.ts";
+import { callLlm, saveFile, autoGenFooter, getLlmConfigSummary, hasLlmCredentials } from "./report.ts";
 import { loadWebState, saveWebState, fetchSiteContent, type WebFetchResult, type WebState } from "./web.ts";
 import { fetchTrendingData, type TrendingData } from "./trending.ts";
 import { fetchHnData, type HnData } from "./hn.ts";
@@ -515,7 +515,7 @@ async function main(): Promise<void> {
   const dateStr = new Date(now.getTime() + 8 * 60 * 60 * 1000).toISOString().slice(0, 10);
   const utcStr = now.toISOString().slice(0, 16).replace("T", " ");
 
-  console.log(`[${now.toISOString()}] Starting digest | endpoint: ${getLlmBaseUrl()}`);
+  console.log(`[${now.toISOString()}] Starting digest | ${getLlmConfigSummary()}`);
 
   const langs = (process.env["REPORT_LANGS"] ?? "zh")
     .split(",")
