@@ -6,7 +6,14 @@
     <description>AI Agent 生态每日简报 · Daily AI agent ecosystem digest</description>
     <language>zh-CN</language>
     <atom:link href="https://yidasanqian.github.io/ai-agent-radar/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Thu, 28 May 2026 03:07:56 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jun 2026 06:12:34 +0000</lastBuildDate>
+    <item>
+      <title>AI 工具生态周报 2026-06-01</title>
+      <link>https://yidasanqian.github.io/ai-agent-radar/#2026-06-01/ai-weekly</link>
+      <guid isPermaLink="true">https://yidasanqian.github.io/ai-agent-radar/#2026-06-01/ai-weekly</guid>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+      <description>AI 工具生态周报 2026-06-01</description>
+    </item>
     <item>
       <title>AI CLI 工具社区动态日报 2026-05-28</title>
       <link>https://yidasanqian.github.io/ai-agent-radar/#2026-05-28/ai-cli</link>
