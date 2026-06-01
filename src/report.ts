@@ -62,6 +62,31 @@ function is429(err: unknown): boolean {
   return (err as { status?: number })?.status === 429 || String(err).includes("429");
 }
 
+function isTransientNetworkError(err: unknown): boolean {
+  if (!(err instanceof Error)) return false;
+  // Node.js fetch wraps all network failures as "TypeError: fetch failed"
+  if (err instanceof TypeError && err.message === "fetch failed") return true;
+  const cause = (err as { cause?: unknown }).cause;
+  if (cause instanceof Error) {
+    // Check for known transient error codes from undici and Node.js networking
+    const code = (cause as { code?: unknown }).code;
+    if (typeof code === "string") {
+      const transientCodes = new Set([
+        "UND_ERR_HEADERS_TIMEOUT",
+        "UND_ERR_CONNECT_TIMEOUT",
+        "UND_ERR_SOCKET",
+        "UND_ERR_ABORTED",
+        "ECONNRESET",
+        "ECONNREFUSED",
+        "ETIMEDOUT",
+        "ENOTFOUND",
+      ]);
+      if (transientCodes.has(code)) return true;
+    }
+  }
+  return false;
+}
+
 function sleep(ms: number): Promise<void> {
   return new Promise((r) => setTimeout(r, ms));
 }
@@ -223,11 +248,12 @@ export async function callLlm(prompt: string, maxTokens = 4096): Promise<string>
       const content = provider === "anthropic" ? data.content : data.choices?.[0]?.message?.content;
       return extractTextContent(content);
     } catch (err) {
-      if (attempt < MAX_RETRIES && is429(err)) {
+      if (attempt < MAX_RETRIES && (is429(err) || isTransientNetworkError(err))) {
         releaseSlot();
         released = true;
         const wait = RETRY_BASE_MS * 2 ** attempt;
-        console.error(`[llm] 429 — retry ${attempt + 1}/${MAX_RETRIES} in ${wait / 1000}s...`);
+        const reason = is429(err) ? "429" : "network error";
+        console.error(`[llm] ${reason} — retry ${attempt + 1}/${MAX_RETRIES} in ${wait / 1000}s...`);
         await sleep(wait);
         continue;
       }

@@ -576,10 +576,14 @@ async function main(): Promise<void> {
       releases: fetchedOpenclaw.releases,
       summary: zhSummaries.openclawSummary,
     };
-    [comparison, peersComparison] = await Promise.all([
-      callLlm(buildComparisonPrompt(zhSummaries.cliDigests, dateStr, "zh")),
-      callLlm(buildPeersComparisonPrompt(openclawDigest, zhSummaries.peerDigests, dateStr, "zh")),
-    ]);
+    try {
+      [comparison, peersComparison] = await Promise.all([
+        callLlm(buildComparisonPrompt(zhSummaries.cliDigests, dateStr, "zh")),
+        callLlm(buildPeersComparisonPrompt(openclawDigest, zhSummaries.peerDigests, dateStr, "zh")),
+      ]);
+    } catch (err) {
+      console.error(`  [comparison/zh] LLM call failed: ${err}`);
+    }
   }
   if (genEn && enSummaries) {
     const enOpenclawDigest: RepoDigest = {
@@ -589,10 +593,14 @@ async function main(): Promise<void> {
       releases: fetchedOpenclaw.releases,
       summary: enSummaries.openclawSummary,
     };
-    [enComparison, enPeersComparison] = await Promise.all([
-      callLlm(buildComparisonPrompt(enSummaries.cliDigests, dateStr, "en")),
-      callLlm(buildPeersComparisonPrompt(enOpenclawDigest, enSummaries.peerDigests, dateStr, "en")),
-    ]);
+    try {
+      [enComparison, enPeersComparison] = await Promise.all([
+        callLlm(buildComparisonPrompt(enSummaries.cliDigests, dateStr, "en")),
+        callLlm(buildPeersComparisonPrompt(enOpenclawDigest, enSummaries.peerDigests, dateStr, "en")),
+      ]);
+    } catch (err) {
+      console.error(`  [comparison/en] LLM call failed: ${err}`);
+    }
   }
 
   const footer = autoGenFooter("zh");
