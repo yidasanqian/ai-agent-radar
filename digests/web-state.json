@@ -1,6 +1,6 @@
 {
   "anthropic": {
-    "lastChecked": "2026-06-20T03:41:32.639Z",
+    "lastChecked": "2026-06-21T04:15:10.792Z",
     "seenUrls": {
       "https://www.anthropic.com/research/coding-agents-social-sciences": "2026-05-27T23:35:45.000Z",
       "https://www.anthropic.com/engineering/claude-code-auto-mode": "2026-05-27T11:44:48.000Z",
@@ -405,7 +405,7 @@
     }
   },
   "openai": {
-    "lastChecked": "2026-06-20T03:41:32.074Z",
+    "lastChecked": "2026-06-21T04:15:10.971Z",
     "seenUrls": {
       "https://openai.com/index/gpt-4-research/": "2026-06-08T07:35:37.195Z",
       "https://openai.com/research/index/release/": "2026-06-16T22:28:52.876Z",
@@ -415,7 +415,7 @@
       "https://openai.com/news/research/": "2026-06-16T22:28:29.578Z",
       "https://openai.com/research/index/publication/": "2026-06-16T22:28:25.681Z",
       "https://openai.com/research/index/milestone/": "2026-06-16T22:28:22.814Z",
-      "https://openai.com/index/emergent-tool-use/": "2026-06-03T04:01:24.823Z",
+      "https://openai.com/index/emergent-tool-use/": "2026-06-20T09:57:07.109Z",
       "https://openai.com/index/emergence-of-grounded-compositional-language-in-multi-agent-populations/": "2026-06-02T06:24:14.808Z",
       "https://openai.com/index/roboschool/": "2026-06-16T22:28:09.035Z",
       "https://openai.com/index/learning-to-cooperate-compete-and-communicate/": "2026-06-03T03:59:55.989Z",
@@ -643,7 +643,7 @@
       "https://openai.com/index/unsupervised-sentiment-neuron/": "2026-06-01T19:21:36.407Z",
       "https://openai.com/index/ffjord/": "2026-06-03T04:00:13.763Z",
       "https://openai.com/index/domain-randomization-and-generative-models-for-robotic-grasping/": "2026-06-03T04:00:02.761Z",
-      "https://openai.com/index/openai-and-los-alamos-national-laboratory-work-together/": "2026-06-03T04:00:46.529Z",
+      "https://openai.com/index/openai-and-los-alamos-national-laboratory-work-together/": "2026-06-20T16:23:16.064Z",
       "https://openai.com/index/hierarchical-text-conditional-image-generation-with-clip-latents/": "2026-06-12T12:43:09.485Z",
       "https://openai.com/index/image-gpt/": "2026-06-14T06:18:11.841Z",
       "https://openai.com/index/variational-lossy-autoencoder/": "2026-06-01T19:21:35.748Z",
@@ -657,7 +657,7 @@
       "https://openai.com/index/work-with-codex-from-anywhere/": "2026-05-27T01:26:35.768Z",
       "https://openai.com/index/openai-campus-network-student-club-interest-form/": "2026-06-15T00:00:55.800Z",
       "https://openai.com/index/unlocking-the-codex-harness/": "2026-06-19T14:50:33.140Z",
-      "https://openai.com/index/unrolling-the-codex-agent-loop/": "2026-06-19T14:51:06.896Z",
+      "https://openai.com/index/unrolling-the-codex-agent-loop/": "2026-06-20T09:40:23.246Z",
       "https://openai.com/index/variance-reduction-for-policy-gradient-with-action-dependent-factorized-baselines/": "2026-06-03T03:59:52.941Z",
       "https://openai.com/index/dota-2/": "2026-06-03T04:00:38.357Z",
       "https://openai.com/index/requests-for-research-2/": "2026-06-03T04:00:45.678Z",
@@ -670,7 +670,7 @@
       "https://openai.com/index/on-first-order-meta-learning-algorithms/": "2026-06-03T03:59:56.923Z",
       "https://openai.com/index/webgpt/": "2026-06-03T03:59:48.401Z",
       "https://openai.com/index/learning-dexterity/": "2026-06-03T04:01:48.858Z",
-      "https://openai.com/index/sharing-the-latest-model-spec/": "2026-06-03T04:00:33.449Z",
+      "https://openai.com/index/sharing-the-latest-model-spec/": "2026-06-20T10:31:11.521Z",
       "https://openai.com/index/gpt-2-6-month-follow-up/": "2026-06-03T04:00:25.130Z",
       "https://openai.com/index/sora/": "2026-06-15T18:32:33.760Z",
       "https://openai.com/index/solving-rubiks-cube/": "2026-06-19T16:15:14.569Z",
@@ -809,7 +809,7 @@
       "https://openai.com/index/introducing-gpt-realtime/": "2026-05-22T19:18:36.512Z",
       "https://openai.com/index/introducing-simpleqa/": "2026-05-22T19:18:18.702Z",
       "https://openai.com/global-affairs/openai-s-comment-to-the-ntia-on-open-model-weights/": "2026-06-15T17:23:12.621Z",
-      "https://openai.com/index/democratic-inputs-to-ai/": "2026-05-22T19:18:08.062Z",
+      "https://openai.com/index/democratic-inputs-to-ai/": "2026-06-20T09:26:07.274Z",
       "https://openai.com/index/ai-progress-and-recommendations/": "2026-06-18T22:45:39.674Z",
       "https://openai.com/index/joint-statement-from-openai-and-microsoft/": "2026-06-09T14:06:04.266Z",
       "https://openai.com/index/gartner-2025-emerging-leader/": "2026-06-08T07:32:40.882Z",
@@ -1067,8 +1067,8 @@
       "https://openai.com/index/japan-teen-safety-blueprint/": "2026-06-12T15:36:45.320Z",
       "https://openai.com/index/introducing-gpt-5-3-codex-spark/": "2026-06-09T14:31:41.792Z",
       "https://openai.com/index/introducing-the-gpt-store/": "2026-06-09T04:58:11.734Z",
-      "https://openai.com/index/computer-using-agent/": "2026-06-14T04:34:44.366Z",
-      "https://openai.com/index/introducing-operator/": "2026-06-14T04:34:13.954Z",
+      "https://openai.com/index/computer-using-agent/": "2026-06-20T08:53:09.429Z",
+      "https://openai.com/index/introducing-operator/": "2026-06-20T08:52:43.338Z",
       "https://openai.com/index/openai-deutschland/": "2026-06-16T09:56:42.362Z",
       "https://openai.com/global-affairs/comment-on-ntia-ai-accountability-policy/": "2026-06-18T02:29:05.873Z",
       "https://openai.com/global-affairs/response-to-nist-executive-order-on-ai/": "2026-06-16T10:11:05.835Z",
@@ -1080,7 +1080,7 @@
       "https://openai.com/index/announcing-devday-2025/": "2026-05-14T09:46:08.248Z",
       "https://openai.com/index/chatgpt-can-now-see-hear-and-speak/": "2026-05-14T07:41:42.556Z",
       "https://openai.com/index/introducing-b2b-signals/": "2026-06-11T21:43:52.895Z",
-      "https://openai.com/index/equip-responses-api-computer-environment/": "2026-05-06T08:54:30.482Z",
+      "https://openai.com/index/equip-responses-api-computer-environment/": "2026-06-20T09:40:03.300Z",
       "https://openai.com/index/inside-our-in-house-data-agent/": "2026-06-09T23:34:58.570Z",
       "https://openai.com/index/chatgpt-for-excel/": "2026-06-09T12:52:57.882Z",
       "https://openai.com/index/scaling-postgresql/": "2026-04-30T08:47:42.153Z",
@@ -1102,7 +1102,7 @@
       "https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense/": "2026-06-04T13:41:59.710Z",
       "https://openai.com/index/trustworthy-third-party-evaluations-foundations/": "2026-06-05T10:13:33.527Z",
       "https://openai.com/index/openai-frontier-governance-framework/": "2026-06-04T08:13:48.422Z",
-      "https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind/": "2026-06-19T20:40:37.935Z",
+      "https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind/": "2026-06-20T18:26:03.383Z",
       "https://openai.com/index/chatgpt-memory-dreaming/": "2026-06-16T23:10:43.853Z",
       "https://openai.com/index/advancing-youth-safety-and-opportunity-through-global-leadership/": "2026-06-05T06:40:18.609Z",
       "https://openai.com/index/codex-for-every-role-tool-workflow/": "2026-06-17T20:27:35.935Z",
@@ -1111,11 +1111,11 @@
       "https://openai.com/index/economic-research-exchange/": "2026-06-16T18:34:34.824Z",
       "https://openai.com/index/openai-on-oracle-cloud/": "2026-06-19T19:55:28.635Z",
       "https://openai.com/index/openai-to-acquire-ona/": "2026-06-19T05:51:09.079Z",
-      "https://openai.com/index/introducing-openai-partner-network/": "2026-06-18T15:30:35.388Z",
-      "https://openai.com/index/deployment-simulation/": "2026-06-19T17:22:10.632Z",
+      "https://openai.com/index/introducing-openai-partner-network/": "2026-06-20T16:32:22.688Z",
+      "https://openai.com/index/deployment-simulation/": "2026-06-20T23:32:14.888Z",
       "https://openai.com/index/improving-health-intelligence-in-chatgpt/": "2026-06-18T23:23:45.328Z",
-      "https://openai.com/index/chatgpt-enterprise-spend-controls/": "2026-06-19T16:56:26.676Z",
-      "https://openai.com/index/introducing-life-sci-bench/": "2026-06-19T20:40:38.749Z"
+      "https://openai.com/index/chatgpt-enterprise-spend-controls/": "2026-06-21T02:36:06.670Z",
+      "https://openai.com/index/introducing-life-sci-bench/": "2026-06-20T18:26:24.767Z"
     }
   }
 }
