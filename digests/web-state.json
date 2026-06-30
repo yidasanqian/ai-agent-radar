@@ -1,6 +1,6 @@
 {
   "anthropic": {
-    "lastChecked": "2026-06-29T03:57:14.547Z",
+    "lastChecked": "2026-06-30T03:40:09.023Z",
     "seenUrls": {
       "https://www.anthropic.com/research/coding-agents-social-sciences": "2026-05-27T23:35:45.000Z",
       "https://www.anthropic.com/engineering/claude-code-auto-mode": "2026-05-27T11:44:48.000Z",
@@ -407,7 +407,7 @@
     }
   },
   "openai": {
-    "lastChecked": "2026-06-29T03:57:15.636Z",
+    "lastChecked": "2026-06-30T03:40:09.446Z",
     "seenUrls": {
       "https://openai.com/index/gpt-4-research/": "2026-06-08T07:35:37.195Z",
       "https://openai.com/research/index/release/": "2026-06-16T22:28:52.876Z",
@@ -657,7 +657,7 @@
       "https://openai.com/index/a-connection-between-generative-adversarial-networks-inverse-reinforcement-learning-and-energy-based-models/": "2026-06-01T19:21:40.199Z",
       "https://openai.com/index/personal-finance-chatgpt/": "2026-06-26T23:25:36.814Z",
       "https://openai.com/index/work-with-codex-from-anywhere/": "2026-05-27T01:26:35.768Z",
-      "https://openai.com/index/openai-campus-network-student-club-interest-form/": "2026-06-28T15:25:17.920Z",
+      "https://openai.com/index/openai-campus-network-student-club-interest-form/": "2026-06-29T22:05:34.846Z",
       "https://openai.com/index/unlocking-the-codex-harness/": "2026-06-19T14:50:33.140Z",
       "https://openai.com/index/unrolling-the-codex-agent-loop/": "2026-06-24T20:57:13.104Z",
       "https://openai.com/index/variance-reduction-for-policy-gradient-with-action-dependent-factorized-baselines/": "2026-06-03T03:59:52.941Z",
@@ -826,7 +826,7 @@
       "https://openai.com/index/improvements-to-data-analysis-in-chatgpt/": "2026-06-12T17:43:07.663Z",
       "https://openai.com/index/openai-nvidia-systems-partnership/": "2026-06-10T09:36:37.181Z",
       "https://openai.com/index/our-approach-to-age-prediction/": "2026-06-12T04:52:33.033Z",
-      "https://openai.com/index/codex-now-generally-available/": "2026-05-22T19:16:18.119Z",
+      "https://openai.com/index/codex-now-generally-available/": "2026-06-29T05:06:46.222Z",
       "https://openai.com/index/global-news-partnerships-le-monde-and-prisa-media/": "2026-06-09T15:37:07.950Z",
       "https://openai.com/index/image-generation-api/": "2026-05-22T19:16:04.490Z",
       "https://openai.com/index/gpt-5-system-card-addendum-gpt-5-codex/": "2026-06-12T14:34:48.135Z",
@@ -838,7 +838,7 @@
       "https://openai.com/index/introducing-gpt-oss-safeguard/": "2026-06-14T07:22:19.093Z",
       "https://openai.com/index/introducing-chatgpt-team/": "2026-06-12T23:39:26.210Z",
       "https://openai.com/index/extracting-concepts-from-gpt-4/": "2026-06-18T00:24:07.966Z",
-      "https://openai.com/index/introducing-gpt-5-2-codex/": "2026-06-04T21:05:42.250Z",
+      "https://openai.com/index/introducing-gpt-5-2-codex/": "2026-06-29T05:06:25.825Z",
       "https://openai.com/index/o3-o4-mini-system-card/": "2026-06-08T09:11:54.155Z",
       "https://openai.com/index/gpt-5-system-card-addendum-gpt-5-1/": "2026-06-12T04:53:08.238Z",
       "https://openai.com/index/review-completed-altman-brockman-to-continue-to-lead-openai/": "2026-06-11T17:29:37.246Z",
@@ -936,7 +936,7 @@
       "https://openai.com/index/customizing-gpt-3/": "2026-06-03T18:57:23.031Z",
       "https://openai.com/index/dall-e-introducing-outpainting/": "2026-06-03T18:57:35.305Z",
       "https://openai.com/index/new-and-improved-embedding-model/": "2026-06-12T02:26:12.194Z",
-      "https://openai.com/index/codex-flexible-pricing-for-teams/": "2026-06-26T14:46:14.119Z",
+      "https://openai.com/index/codex-flexible-pricing-for-teams/": "2026-06-29T05:23:42.653Z",
       "https://openai.com/index/custom-instructions-for-chatgpt/": "2026-05-22T19:05:41.642Z",
       "https://openai.com/index/o1-and-new-tools-for-developers/": "2026-05-22T19:05:40.543Z",
       "https://openai.com/index/stochastic-neural-networks-for-hierarchical-reinforcement-learning/": "2026-06-01T19:21:48.668Z",
@@ -976,7 +976,7 @@
       "https://openai.com/global-affairs/an-update-on-disrupting-deceptive-uses-of-ai/": "2026-06-10T12:28:04.472Z",
       "https://openai.com/index/chatgpt/": "2026-06-03T18:57:55.696Z",
       "https://openai.com/index/gpt-4-5-system-card/": "2026-05-22T19:03:43.610Z",
-      "https://openai.com/index/introducing-upgrades-to-codex/": "2026-06-04T20:50:31.278Z",
+      "https://openai.com/index/introducing-upgrades-to-codex/": "2026-06-29T05:06:43.057Z",
       "https://openai.com/index/vijaye-raji-to-become-cto-of-applications-with-acquisition-of-statsig/": "2026-05-22T19:03:33.365Z",
       "https://openai.com/business/solving-complex-problems-with-openai-o1-models/": "2026-05-22T19:03:33.187Z",
       "https://openai.com/index/openai-appoints-denise-dresser/": "2026-05-22T19:03:30.883Z",
@@ -1011,7 +1011,7 @@
       "https://openai.com/index/introducing-chatgpt-search/": "2026-06-04T22:11:41.899Z",
       "https://openai.com/index/gpt-4-api-general-availability/": "2026-06-17T08:22:08.178Z",
       "https://openai.com/index/dall-e-now-available-without-waitlist/": "2026-06-11T00:29:07.074Z",
-      "https://openai.com/index/gpt-5-1-codex-max/": "2026-06-09T21:12:32.369Z",
+      "https://openai.com/index/gpt-5-1-codex-max/": "2026-06-29T05:06:22.136Z",
       "https://openai.com/index/enhancing-news-in-chatgpt-with-the-atlantic/": "2026-06-13T00:18:11.905Z",
       "https://openai.com/index/gpt-5-1-codex-max-system-card/": "2026-06-08T07:32:21.223Z",
       "https://openai.com/index/gpt-5-system-card-sensitive-conversations/": "2026-06-12T14:39:26.459Z",
@@ -1116,14 +1116,14 @@
       "https://openai.com/index/introducing-openai-partner-network/": "2026-06-23T13:22:27.216Z",
       "https://openai.com/index/deployment-simulation/": "2026-06-25T15:33:31.672Z",
       "https://openai.com/index/improving-health-intelligence-in-chatgpt/": "2026-06-24T00:36:27.755Z",
-      "https://openai.com/index/chatgpt-enterprise-spend-controls/": "2026-06-25T09:53:22.123Z",
+      "https://openai.com/index/chatgpt-enterprise-spend-controls/": "2026-06-29T20:50:32.610Z",
       "https://openai.com/index/introducing-life-sci-bench/": "2026-06-24T20:50:25.977Z",
-      "https://openai.com/index/samsung-electronics-chatgpt-codex-deployment/": "2026-06-26T16:09:17.109Z",
+      "https://openai.com/index/samsung-electronics-chatgpt-codex-deployment/": "2026-06-29T15:56:02.566Z",
       "https://openai.com/index/daybreak-securing-the-world/": "2026-06-25T10:12:01.877Z",
-      "https://openai.com/index/how-agents-are-transforming-work/": "2026-06-28T17:18:22.125Z",
-      "https://openai.com/index/openai-broadcom-jalapeno-inference-chip/": "2026-06-28T21:56:30.090Z",
-      "https://openai.com/index/previewing-gpt-5-6-sol/": "2026-06-28T10:26:02.064Z",
-      "https://openai.com/index/hp-frontier-partnership/": "2026-06-29T00:28:03.809Z"
+      "https://openai.com/index/how-agents-are-transforming-work/": "2026-06-29T14:41:28.572Z",
+      "https://openai.com/index/openai-broadcom-jalapeno-inference-chip/": "2026-06-30T03:33:47.975Z",
+      "https://openai.com/index/previewing-gpt-5-6-sol/": "2026-06-29T15:35:03.069Z",
+      "https://openai.com/index/hp-frontier-partnership/": "2026-06-30T02:02:27.511Z"
     }
   }
 }
