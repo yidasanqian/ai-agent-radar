@@ -1,6 +1,6 @@
 {
   "anthropic": {
-    "lastChecked": "2026-07-04T02:55:40.808Z",
+    "lastChecked": "2026-07-05T03:25:24.159Z",
     "seenUrls": {
       "https://www.anthropic.com/research/coding-agents-social-sciences": "2026-05-27T23:35:45.000Z",
       "https://www.anthropic.com/engineering/claude-code-auto-mode": "2026-05-27T11:44:48.000Z",
@@ -412,7 +412,7 @@
     }
   },
   "openai": {
-    "lastChecked": "2026-07-04T02:55:33.959Z",
+    "lastChecked": "2026-07-05T03:25:25.772Z",
     "seenUrls": {
       "https://openai.com/index/gpt-4-research/": "2026-06-08T07:35:37.195Z",
       "https://openai.com/research/index/release/": "2026-06-16T22:28:52.876Z",
@@ -1130,7 +1130,7 @@
       "https://openai.com/index/previewing-gpt-5-6-sol/": "2026-07-01T23:15:29.963Z",
       "https://openai.com/index/hp-frontier-partnership/": "2026-07-01T23:23:03.958Z",
       "https://openai.com/index/introducing-genebench-pro/": "2026-07-03T20:54:36.291Z",
-      "https://openai.com/index/core-dump-epidemiology-data-infrastructure-bug/": "2026-07-03T13:56:27.390Z"
+      "https://openai.com/index/core-dump-epidemiology-data-infrastructure-bug/": "2026-07-04T04:10:44.389Z"
     }
   }
 }
