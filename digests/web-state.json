@@ -1,6 +1,6 @@
 {
   "anthropic": {
-    "lastChecked": "2026-07-24T02:40:23.346Z",
+    "lastChecked": "2026-07-25T02:37:58.913Z",
     "seenUrls": {
       "https://www.anthropic.com/research/coding-agents-social-sciences": "2026-05-27T23:35:45.000Z",
       "https://www.anthropic.com/engineering/claude-code-auto-mode": "2026-05-27T11:44:48.000Z",
@@ -425,12 +425,14 @@
       "https://www.anthropic.com/news/rare-disease-research-grants": "2026-07-20T17:36:28.000Z",
       "https://www.anthropic.com/news/claude-for-creative-work-dev": "2026-07-23T20:11:00.000Z",
       "https://www.anthropic.com/news/anthropic-economic-index-connector": "2026-07-22T17:35:48.000Z",
-      "https://www.anthropic.com/news/economic-futures-research-fund-agenda": "2026-07-22T17:35:00.000Z",
-      "https://www.anthropic.com/news/donation-public-first-action": "2026-07-22T10:14:58.000Z"
+      "https://www.anthropic.com/news/economic-futures-research-fund-agenda": "2026-07-24T18:46:48.000Z",
+      "https://www.anthropic.com/news/donation-public-first-action": "2026-07-22T10:14:58.000Z",
+      "https://www.anthropic.com/news/claude-opus-5": "2026-07-25T02:03:36.000Z",
+      "https://www.anthropic.com/research/project-pilot": "2026-07-24T15:38:58.000Z"
     }
   },
   "openai": {
-    "lastChecked": "2026-07-24T02:39:56.990Z",
+    "lastChecked": "2026-07-25T02:38:00.533Z",
     "seenUrls": {
       "https://openai.com/index/gpt-4-research/": "2026-06-08T07:35:37.195Z",
       "https://openai.com/research/index/release/": "2026-07-08T20:03:18.779Z",
@@ -536,7 +538,7 @@
       "https://openai.com/index/team-update-august/": "2026-06-03T18:57:00.513Z",
       "https://openai.com/index/team-update/": "2026-06-03T18:57:46.155Z",
       "https://openai.com/index/openai-supporters/": "2026-06-12T04:05:31.532Z",
-      "https://openai.com/index/openai-scholars/": "2026-07-24T01:59:19.318Z",
+      "https://openai.com/index/openai-scholars/": "2026-07-24T18:51:28.355Z",
       "https://openai.com/index/next-phase-of-enterprise-ai/": "2026-05-29T00:25:12.093Z",
       "https://openai.com/index/openai-scholars-2020-final-projects/": "2026-06-03T18:56:58.159Z",
       "https://openai.com/index/openai-summer-fellows-2018/": "2026-06-03T18:56:58.927Z",
@@ -1159,10 +1161,10 @@
       "https://openai.com/index/unlocking-self-improvement-gpt-red/": "2026-07-22T15:16:03.497Z",
       "https://openai.com/index/a-scorecard-for-the-ai-age/": "2026-07-23T22:18:36.877Z",
       "https://openai.com/index/david-velez-robin-vince-join-openai-boards/": "2026-07-23T23:22:00.503Z",
-      "https://openai.com/index/safety-alignment-long-horizon-models/": "2026-07-23T21:09:02.335Z",
-      "https://openai.com/index/introducing-openai-presence/": "2026-07-24T02:31:28.819Z",
-      "https://openai.com/index/health-in-chatgpt/": "2026-07-24T00:51:03.367Z",
-      "https://openai.com/index/how-news-organizations-are-using-ai/": "2026-07-24T00:31:43.246Z"
+      "https://openai.com/index/safety-alignment-long-horizon-models/": "2026-07-24T13:54:02.388Z",
+      "https://openai.com/index/introducing-openai-presence/": "2026-07-25T00:54:01.621Z",
+      "https://openai.com/index/health-in-chatgpt/": "2026-07-25T00:19:14.782Z",
+      "https://openai.com/index/how-news-organizations-are-using-ai/": "2026-07-24T20:59:31.260Z"
     }
   }
 }
