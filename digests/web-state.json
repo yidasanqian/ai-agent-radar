@@ -1,6 +1,6 @@
 {
   "anthropic": {
-    "lastChecked": "2026-08-05T02:30:14.187Z",
+    "lastChecked": "2026-08-06T02:32:44.774Z",
     "seenUrls": {
       "https://www.anthropic.com/research/coding-agents-social-sciences": "2026-05-27T23:35:45.000Z",
       "https://www.anthropic.com/engineering/claude-code-auto-mode": "2026-05-27T11:44:48.000Z",
@@ -437,7 +437,7 @@
     }
   },
   "openai": {
-    "lastChecked": "2026-08-05T02:30:17.325Z",
+    "lastChecked": "2026-08-06T02:32:47.463Z",
     "seenUrls": {
       "https://openai.com/index/gpt-4-research/": "2026-06-08T07:35:37.195Z",
       "https://openai.com/research/index/release/": "2026-07-08T20:03:18.779Z",
@@ -687,7 +687,7 @@
       "https://openai.com/index/a-connection-between-generative-adversarial-networks-inverse-reinforcement-learning-and-energy-based-models/": "2026-06-01T19:21:40.199Z",
       "https://openai.com/index/personal-finance-chatgpt/": "2026-06-26T23:25:36.814Z",
       "https://openai.com/index/work-with-codex-from-anywhere/": "2026-05-27T01:26:35.768Z",
-      "https://openai.com/index/openai-campus-network-student-club-interest-form/": "2026-07-29T19:07:22.608Z",
+      "https://openai.com/index/openai-campus-network-student-club-interest-form/": "2026-08-05T16:56:33.838Z",
       "https://openai.com/index/unlocking-the-codex-harness/": "2026-06-19T14:50:33.140Z",
       "https://openai.com/index/unrolling-the-codex-agent-loop/": "2026-06-24T20:57:13.104Z",
       "https://openai.com/index/variance-reduction-for-policy-gradient-with-action-dependent-factorized-baselines/": "2026-06-03T03:59:52.941Z",
@@ -888,7 +888,7 @@
       "https://openai.com/index/how-the-voices-for-chatgpt-were-chosen/": "2026-07-25T07:02:52.273Z",
       "https://openai.com/index/instruction-hierarchy-challenge/": "2026-07-21T02:47:37.788Z",
       "https://openai.com/index/sycophancy-in-gpt-4o/": "2026-07-25T07:09:09.432Z",
-      "https://openai.com/index/our-approach-to-the-model-spec/": "2026-06-19T05:06:48.584Z",
+      "https://openai.com/index/our-approach-to-the-model-spec/": "2026-08-05T23:49:08.457Z",
       "https://openai.com/index/openai-welcomes-cfo-cpo/": "2026-06-07T14:44:12.147Z",
       "https://openai.com/index/new-chatgpt-images-is-here/": "2026-07-25T07:17:37.734Z",
       "https://openai.com/index/openai-on-aws/": "2026-06-04T14:57:08.742Z",
@@ -1176,16 +1176,16 @@
       "https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/": "2026-07-28T02:04:59.850Z",
       "https://openai.com/business/guides-and-resources/a-practical-guide-to-building-with-ai/": "2026-07-28T02:04:56.101Z",
       "https://openai.com/business/guides-and-resources/how-openai-uses-codex/": "2026-07-28T02:04:55.166Z",
-      "https://openai.com/index/scientific-computing-agentic-ai/": "2026-08-03T13:19:01.399Z",
+      "https://openai.com/index/scientific-computing-agentic-ai/": "2026-08-05T18:51:01.686Z",
       "https://openai.com/index/gpt-5-6-frontier-intelligence-efficiency/": "2026-08-04T21:36:27.601Z",
       "https://openai.com/index/chatgpt-for-academic-researchers/": "2026-08-03T17:39:06.866Z",
       "https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/": "2026-08-04T21:40:07.084Z",
       "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/": "2026-08-04T17:52:15.462Z",
       "https://openai.com/index/building-abundant-intelligence/": "2026-07-31T15:01:22.960Z",
-      "https://openai.com/index/ten-advances-in-mathematics/": "2026-08-05T01:50:34.032Z",
-      "https://openai.com/index/continuous-voice-interaction-with-gpt-live/": "2026-08-05T02:17:37.863Z",
-      "https://openai.com/index/introducing-the-openai-economic-research-exchange/": "2026-08-04T23:50:07.893Z",
-      "https://openai.com/index/learn-teach-chatgpt-work-codex/": "2026-08-04T22:09:02.450Z",
+      "https://openai.com/index/ten-advances-in-mathematics/": "2026-08-05T17:42:15.586Z",
+      "https://openai.com/index/continuous-voice-interaction-with-gpt-live/": "2026-08-05T20:17:27.527Z",
+      "https://openai.com/index/introducing-the-openai-economic-research-exchange/": "2026-08-06T01:13:11.697Z",
+      "https://openai.com/index/learn-teach-chatgpt-work-codex/": "2026-08-05T21:50:08.064Z",
       "https://openai.com/index/apple-is-getting-this-wrong/": "2026-08-04T20:32:27.131Z"
     }
   }
