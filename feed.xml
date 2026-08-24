@@ -6,7 +6,14 @@
     <description>AI Agent 生态每日简报 · Daily AI agent ecosystem digest</description>
     <language>zh-CN</language>
     <atom:link href="https://yidasanqian.github.io/ai-agent-radar/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Mon, 17 Aug 2026 02:24:57 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 24 Aug 2026 02:25:29 +0000</lastBuildDate>
+    <item>
+      <title>AI 工具生态周报 2026-08-24</title>
+      <link>https://yidasanqian.github.io/ai-agent-radar/#2026-08-24/ai-weekly</link>
+      <guid isPermaLink="true">https://yidasanqian.github.io/ai-agent-radar/#2026-08-24/ai-weekly</guid>
+      <pubDate>Mon, 24 Aug 2026 00:00:00 +0000</pubDate>
+      <description>AI 工具生态周报 2026-08-24</description>
+    </item>
     <item>
       <title>AI 工具生态周报 2026-08-17</title>
       <link>https://yidasanqian.github.io/ai-agent-radar/#2026-08-17/ai-weekly</link>
@@ -209,13 +216,6 @@
       <guid isPermaLink="true">https://yidasanqian.github.io/ai-agent-radar/#2026-08-03/ai-agents</guid>
       <pubDate>Mon, 03 Aug 2026 00:00:00 +0000</pubDate>
       <description>AI Agents 生态日报 2026-08-03</description>
-    </item>
-    <item>
-      <title>AI 开源趋势日报 2026-08-03</title>
-      <link>https://yidasanqian.github.io/ai-agent-radar/#2026-08-03/ai-trending</link>
-      <guid isPermaLink="true">https://yidasanqian.github.io/ai-agent-radar/#2026-08-03/ai-trending</guid>
-      <pubDate>Mon, 03 Aug 2026 00:00:00 +0000</pubDate>
-      <description>AI 开源趋势日报 2026-08-03</description>
     </item>
   </channel>
 </rss>
