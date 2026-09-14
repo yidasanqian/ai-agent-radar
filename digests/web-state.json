@@ -1,6 +1,6 @@
 {
   "anthropic": {
-    "lastChecked": "2026-09-13T03:29:00.874Z",
+    "lastChecked": "2026-09-14T03:39:38.315Z",
     "seenUrls": {
       "https://www.anthropic.com/research/coding-agents-social-sciences": "2026-08-25T16:13:14.000Z",
       "https://www.anthropic.com/engineering/claude-code-auto-mode": "2026-05-27T11:44:48.000Z",
@@ -457,7 +457,7 @@
     }
   },
   "openai": {
-    "lastChecked": "2026-09-13T03:29:03.849Z",
+    "lastChecked": "2026-09-14T03:39:41.187Z",
     "seenUrls": {
       "https://openai.com/index/gpt-4-research/": "2026-06-08T07:35:15.422Z",
       "https://openai.com/research/index/release/": "2026-08-26T00:51:33.942Z",
@@ -1221,12 +1221,12 @@
       "https://openai.com/index/an-alien-mind/": "2026-09-12T03:40:25.418Z",
       "https://openai.com/index/teen-development-research-grants/": "2026-09-11T21:46:03.159Z",
       "https://openai.com/index/research-acceleration-view-inside-openai/": "2026-09-12T21:45:29.606Z",
-      "https://openai.com/index/gpt-6-astra-next-generation-work/": "2026-09-12T05:24:01.862Z",
-      "https://openai.com/index/gpt-6-astra/": "2026-09-12T05:23:04.889Z",
+      "https://openai.com/index/gpt-6-astra-next-generation-work/": "2026-09-13T12:08:01.226Z",
+      "https://openai.com/index/gpt-6-astra/": "2026-09-13T12:07:12.558Z",
       "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex/": "2026-09-11T16:28:00.060Z",
       "https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads/": "2026-09-11T16:27:53.549Z",
       "https://openai.com/index/introducing-chatgpt-images-2-5/": "2026-09-12T21:07:03.699Z",
-      "https://openai.com/index/paul-christiano-joins-openai-foundation-board/": "2026-09-12T15:59:01.806Z",
+      "https://openai.com/index/paul-christiano-joins-openai-foundation-board/": "2026-09-13T22:23:33.963Z",
       "https://openai.com/index/supporting-california-bill-advance-ai-youth-safety/": "2026-09-11T16:27:57.915Z",
       "https://openai.com/index/path-to-astra/": "2026-09-11T16:28:00.438Z",
       "https://openai.com/index/supporting-journalism-from-classrooms-to-newsrooms/": "2026-09-11T14:18:50.033Z",
