@@ -6,7 +6,28 @@
     <description>AI Agent 生态每日简报 · Daily AI agent ecosystem digest</description>
     <language>zh-CN</language>
     <atom:link href="https://yidasanqian.github.io/ai-agent-radar/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Mon, 09 Nov 2026 04:54:37 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 06:09:45 +0000</lastBuildDate>
+    <item>
+      <title>AI CLI 工具社区动态日报 2026-11-10</title>
+      <link>https://yidasanqian.github.io/ai-agent-radar/#2026-11-10/ai-cli</link>
+      <guid isPermaLink="true">https://yidasanqian.github.io/ai-agent-radar/#2026-11-10/ai-cli</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 +0000</pubDate>
+      <description>AI CLI 工具社区动态日报 2026-11-10</description>
+    </item>
+    <item>
+      <title>AI Agents 生态日报 2026-11-10</title>
+      <link>https://yidasanqian.github.io/ai-agent-radar/#2026-11-10/ai-agents</link>
+      <guid isPermaLink="true">https://yidasanqian.github.io/ai-agent-radar/#2026-11-10/ai-agents</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 +0000</pubDate>
+      <description>AI Agents 生态日报 2026-11-10</description>
+    </item>
+    <item>
+      <title>AI 开源趋势日报 2026-11-10</title>
+      <link>https://yidasanqian.github.io/ai-agent-radar/#2026-11-10/ai-trending</link>
+      <guid isPermaLink="true">https://yidasanqian.github.io/ai-agent-radar/#2026-11-10/ai-trending</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 +0000</pubDate>
+      <description>AI 开源趋势日报 2026-11-10</description>
+    </item>
     <item>
       <title>AI CLI 工具社区动态日报 2026-11-09</title>
       <link>https://yidasanqian.github.io/ai-agent-radar/#2026-11-09/ai-cli</link>
@@ -195,27 +216,6 @@
       <guid isPermaLink="true">https://yidasanqian.github.io/ai-agent-radar/#2026-11-01/ai-trending</guid>
       <pubDate>Sun, 01 Nov 2026 00:00:00 +0000</pubDate>
       <description>AI 开源趋势日报 2026-11-01</description>
-    </item>
-    <item>
-      <title>AI CLI 工具社区动态日报 2026-10-31</title>
-      <link>https://yidasanqian.github.io/ai-agent-radar/#2026-10-31/ai-cli</link>
-      <guid isPermaLink="true">https://yidasanqian.github.io/ai-agent-radar/#2026-10-31/ai-cli</guid>
-      <pubDate>Sat, 31 Oct 2026 00:00:00 +0000</pubDate>
-      <description>AI CLI 工具社区动态日报 2026-10-31</description>
-    </item>
-    <item>
-      <title>AI Agents 生态日报 2026-10-31</title>
-      <link>https://yidasanqian.github.io/ai-agent-radar/#2026-10-31/ai-agents</link>
-      <guid isPermaLink="true">https://yidasanqian.github.io/ai-agent-radar/#2026-10-31/ai-agents</guid>
-      <pubDate>Sat, 31 Oct 2026 00:00:00 +0000</pubDate>
-      <description>AI Agents 生态日报 2026-10-31</description>
-    </item>
-    <item>
-      <title>AI 开源趋势日报 2026-10-31</title>
-      <link>https://yidasanqian.github.io/ai-agent-radar/#2026-10-31/ai-trending</link>
-      <guid isPermaLink="true">https://yidasanqian.github.io/ai-agent-radar/#2026-10-31/ai-trending</guid>
-      <pubDate>Sat, 31 Oct 2026 00:00:00 +0000</pubDate>
-      <description>AI 开源趋势日报 2026-10-31</description>
     </item>
   </channel>
 </rss>
